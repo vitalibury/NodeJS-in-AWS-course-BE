@@ -26,6 +26,14 @@ provider:
   stage: dev
   region: eu-west-1
 
+# you can define service wide environment variables here
+  environment:
+    PG_HOST: task4-db.cbw5tigjtq8b.eu-west-1.rds.amazonaws.com
+    PG_PORT: 5432
+    PG_DATABASE: taks4-db
+    PG_USERNAME: postgres
+    PG_PASSWORD: 7254335Dbnfkbralue1
+
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
 #    role:
@@ -43,10 +51,6 @@ provider:
 #              - - "arn:aws:s3:::"
 #                - "Ref" : "ServerlessDeploymentBucket"
 #                - "/*"
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
 
 # you can add packaging information here
 #package:
