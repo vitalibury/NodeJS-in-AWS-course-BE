@@ -30,9 +30,9 @@ provider:
   environment:
     PG_HOST: task4-db.cbw5tigjtq8b.eu-west-1.rds.amazonaws.com
     PG_PORT: 5432
-    PG_DATABASE: taks4-db
-    PG_USERNAME: postgres
-    PG_PASSWORD: 7254335Dbnfkbralue1
+    PG_DATABASE: key
+    PG_USERNAME: key
+    PG_PASSWORD: key
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
@@ -74,6 +74,13 @@ functions:
       - http:
           path: products/{id}
           method: get
+          cors: true
+  createNewProduct:
+    handler: handler.createNewProduct
+    events:
+      - http:
+          path: products
+          method: post
           cors: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
